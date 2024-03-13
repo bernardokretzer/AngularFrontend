@@ -12,6 +12,9 @@ O almoxarife pode: Aprovar/Reprovar uma compra.
 
 O Adiministrador pode: Consultar compras.
 
+O repositório referente ao backend dessa aplicação se encontra em 
+https://github.com/bernardokretzer/NodejsBackend
+
 ## Pré requisitos
 
 Baixar última versão do node.js
