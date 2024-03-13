@@ -1,0 +1,27 @@
+@import 'variables.scss';
+
+.cards-conteiner {
+    border: 1px solid $cor-borda;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background: $cor-branco;
+    margin-bottom: 5px;
+    padding: 5px;    
+    
+    .card-value {
+        padding: 5px;
+
+        &.card-success {
+            background-color: $cor-success;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        &.card-error {
+            background-color: $cor-error;
+            border-radius: 5px;
+        }
+    }
+
+}

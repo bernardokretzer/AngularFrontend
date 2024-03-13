@@ -1,0 +1,12 @@
+<div class="title">
+    <h3>Solicitação de compras</h3>
+</div>
+<div class="page-content">
+    <solicitacao-form-component *ngIf="canUse" (onFormSubmit)="onFormSubmit($event)"></solicitacao-form-component>
+    <ng-container *ngIf="!canUse">
+        <span class="tela-aviso" *ngIf="!canUse">Essa tela somente é permitida para usuários do tipo {{ usuario }}</span>
+        <br />
+        <br />
+        <a *ngIf="!canUse" routerLink="/user">Mudar usuário</a>
+    </ng-container>
+</div>

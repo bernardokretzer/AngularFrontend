@@ -1,0 +1,7 @@
+<app-header (onMenuClick)="onMenuClick()"></app-header>
+<div class="main-page">
+    <sidebar-component [isOpened]="sidebarOpen"></sidebar-component>
+    <div class="main-layout">
+        <router-outlet></router-outlet>
+    </div>
+</div>

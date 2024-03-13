@@ -1,0 +1,35 @@
+@import 'variables.scss';
+
+.button-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.button-content {
+    padding: 10px 20px;
+    background-color: $cor-padrao;
+    color: $cor-branco;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 150px;
+
+    @media only screen and (min-width: 768px) {
+        width: 20vw;
+    }
+    
+
+    &.button-title {
+        height: 34px;
+        margin-top: 5px;
+        position: unset;
+        margin-right: 30px;
+    }
+
+    &:hover{
+        background-color: $cor-success;
+    }
+
+    &.botton-disabled {
+        background-color: $cor-readonly;
+    }
+}

@@ -1,0 +1,12 @@
+<ng-container *ngFor="let card of cardsValue">
+    <div class="cards-conteiner">
+        <span class="card-value"> Nome solicitante: {{ card.nome_solicitante }} </span>
+        <span class="card-value"> Descrição item: {{ card.desc_item }} </span>
+        <span class="card-value"> Preço do produto: {{ card.preco_produto }} </span>
+        <span class="card-value 
+            {{ card.solicitacao_status === 'Aprovado' ? 'card-success' : ''}} 
+            {{card.solicitacao_status === 'Reprovado' ? 'card-error' : ''}}"
+        > Situação : {{ card.solicitacao_status }} </span>
+        <span *ngIf="card.observacao" class="card-value"> OBS: {{ card.observacao }} </span>
+    </div>
+</ng-container>

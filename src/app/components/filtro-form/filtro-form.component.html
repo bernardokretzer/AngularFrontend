@@ -1,0 +1,38 @@
+<form (ngSubmit)="onFormSubmitEvent()">
+    <div class="form-container">
+        <label class="form-label" for="nome_solicitante">Nome do solicitante: </label>   
+        <input 
+            class="form-field" 
+            type="text"
+            id="nome_solicitante" 
+            name="nome_solicitante" 
+            (change)="onEditorsChange()"
+            [(ngModel)]="nome_solicitante"
+        >
+        <label class="form-label" for="desc_item">Descrição do item: </label>   
+        <input 
+            class="form-field" 
+            type="text"
+            id="desc_item" 
+            name="desc_item" 
+            (change)="onEditorsChange()"
+            [(ngModel)]="desc_item"
+        >
+        <label class="form-label" for="solicitacao_status">Estado: </label>   
+        <select 
+            class="form-field" 
+            id="solicitacao_status" 
+            name="solicitacao_status" 
+            [(ngModel)]="solicitacao_status"
+            (change)="onEditorsChange()"
+        >
+            <option value="" disabled selected>Selecione</option>
+            <option value="Em análise">Em análise</option>
+            <option value="Aprovado">Aprovado</option>
+            <option value="Reprovado">Reprovado</option>
+        </select>
+    </div>
+    <div class="button-container">
+        <button class="button-content {{ bottonDisabled ? 'botton-disabled' : ''}}" [disabled]="bottonDisabled" name="filtrar" type="submit">Filtrar</button>
+    </div>
+</form>

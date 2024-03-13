@@ -1,0 +1,15 @@
+<div class="title">
+    <h3>Aprovar/Reprovar compra</h3>
+</div>
+<div class="page-content">
+    <ng-container *ngIf="canUse">
+        <solicitacao-form-component *ngIf="fromValue" [formValue]="fromValue" [isAlmoxerife]="true" (onFormSubmit)="onFormSubmit($event)"></solicitacao-form-component>
+        <span class="tela-aviso" *ngIf="!fromValue">Não há solicitações pendentes!</span>
+    </ng-container>
+    <ng-container *ngIf="!canUse">
+        <span class="tela-aviso" *ngIf="!canUse">Essa tela somente é permitida para usuários do tipo {{ usuario }}</span>
+        <br />
+        <br />
+        <a *ngIf="!canUse" routerLink="/user">Mudar usuário</a>
+    </ng-container>
+</div>

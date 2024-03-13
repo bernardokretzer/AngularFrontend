@@ -1,0 +1,43 @@
+<div class="title">
+    <h3>Configurações do usuário</h3>
+</div>
+<div class="page-content">
+    <form (ngSubmit)="onFormSubmit()">
+        <div class="form-container">
+            <label class="form-label" for="nome">Nome: </label>   
+            <input 
+                class="form-field" 
+                type="text"
+                id="nome" 
+                name="nome" 
+                [(ngModel)]="nome"
+                (change)="onEditorsChange()"
+            >
+            <label class="form-label" for="senha">Senha: </label>   
+            <input 
+                class="form-field" 
+                type="password"
+                id="senha" 
+                name="senha" 
+                [(ngModel)]="senha"
+                (change)="onEditorsChange()"
+            >
+            <label class="form-label" for="select">Cargo: </label>   
+            <select 
+                class="form-field" 
+                id="select" 
+                name="select" 
+                [(ngModel)]="cargo"
+                (change)="onEditorsChange()"
+            >
+                <option value="" disabled selected>Selecione</option>
+                <option value="solicitante">Solicitante</option>
+                <option value="almoxerife">Almoxerife</option>
+                <option value="administrativo">Administrativo</option>
+            </select>
+        </div>
+        <div class="button-container">
+            <button class="button-content {{ bottonDisabled ? 'botton-disabled' : ''}}" [disabled]="bottonDisabled" name="salvar" type="submit">Salvar</button>
+        </div>
+    </form>
+</div>

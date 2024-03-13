@@ -1,0 +1,24 @@
+@import 'variables.scss';
+
+.form-container {
+    display: flex;
+    flex-direction: column;  
+
+    .form-label {
+        margin-bottom: 5px;
+        font-size: medium;
+    }
+
+    .form-field {
+        padding: 10px;
+        border: 1px solid $cor-borda;
+        border-radius: 5px;
+        margin-bottom: 10px;
+
+        &.form-readonly {
+            color: $cor-readonly
+        }
+    }
+}
+
+

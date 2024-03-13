@@ -1,0 +1,10 @@
+@import 'variables.scss';
+
+.header-conteiner {
+    width: 100%;
+    height: 50px;
+    background-color: $cor-padrao;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;;
+}

@@ -1,0 +1,33 @@
+<div *ngIf="!isMobile" class="sidebar-fixed">
+    <div class="sidebar-icons {{ !isMobile ? 'fixed' : ''}}">
+        <icon-component name="home" routerLink="/home"></icon-component>
+        <icon-component name="shopping_bag" routerLink="/solicitacao"></icon-component>
+        <icon-component name="checklist_rtl" routerLink="/aprovarCompras"></icon-component>
+        <icon-component name="manage_search" routerLink="/consultaCompras"></icon-component>
+    </div>
+    <div *ngIf="isOpened" class="sidebar-texts">
+        <span class="sidebar-text" routerLink="/home">Home</span>
+        <span class="sidebar-text" routerLink="/solicitacao">Solicitação de compra</span>
+        <span class="sidebar-text" routerLink="/aprovarCompras">Aprovar/Reprovar compra</span>
+        <span class="sidebar-text" routerLink="/consultaCompras">Consultar compras</span>        
+    </div>
+</div>
+
+<div *ngIf="isMobile" class="sidebar {{ isOpened ? 'open' : 'close'}}">
+    <div class="sidebar-item" routerLink="/home">
+        <icon-component name="home"></icon-component>
+        <span>Home</span>
+    </div>
+    <div class="sidebar-item" routerLink="/solicitacao">
+        <icon-component name="shopping_bag"></icon-component>
+        <span>Solicitação de compra</span>
+    </div>
+    <div class="sidebar-item" routerLink="/aprovarCompras">
+        <icon-component name="checklist_rtl"></icon-component>
+        <span>Aprovar/Reprovar compra</span>
+    </div>
+    <div class="sidebar-item" routerLink="/consultaCompras">
+        <icon-component name="manage_search"></icon-component>
+        <span>Consultar compras</span>
+    </div>
+</div>

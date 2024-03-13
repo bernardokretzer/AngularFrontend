@@ -1,0 +1,63 @@
+<form (ngSubmit)="onFormSubmitEvent()">
+    <div class="form-container">
+        <label class="form-label" for="nome_solicitante">Nome do solicitante: </label>   
+        <input 
+            class="form-field {{ isAlmoxerife ? 'form-readonly' : ''}}" 
+            type="text"
+            id="nome_solicitante" 
+            name="nome_solicitante" 
+            (change)="onEditorsChange()"
+            [(ngModel)]="nome_solicitante"
+            [readOnly]="isAlmoxerife"
+        >
+        <label class="form-label" for="desc_item">Descrição do item: </label>   
+        <input 
+            class="form-field {{ isAlmoxerife ? 'form-readonly' : ''}}" 
+            type="text"
+            id="desc_item" 
+            name="desc_item" 
+            (change)="onEditorsChange()"
+            [(ngModel)]="desc_item"
+            [readOnly]="isAlmoxerife"
+        >
+        <label class="form-label" for="preco_produto">Preço do produto: </label>   
+        <input 
+            class="form-field {{ isAlmoxerife ? 'form-readonly' : ''}}" 
+            type="text"
+            mask="00,00"
+            prefix="R$ "
+            [dropSpecialCharacters]="false"
+            id="preco_produto" 
+            name="preco_produto" 
+            (change)="onEditorsChange()"
+            [(ngModel)]="preco_produto"
+            [readOnly]="isAlmoxerife"
+        >
+        <ng-container *ngIf="isAlmoxerife">
+            <label class="form-label" for="solicitacao_status">Ação: </label>   
+            <select 
+                class="form-field" 
+                id="solicitacao_status" 
+                name="solicitacao_status" 
+                [(ngModel)]="solicitacao_status"
+                (change)="onEditorsChange()"
+            >
+                <option value="Em análise" disabled selected>Selecione</option>
+                <option value="Aprovado">Aprovar</option>
+                <option value="Reprovado">Reprovar</option>
+            </select>    
+            <label class="form-label" for="observacao">Observação: </label>   
+            <input 
+                class="form-field" 
+                type="text"
+                id="observacao" 
+                name="observacao" 
+                (change)="onEditorsChange()"
+                [(ngModel)]="observacao"
+            >
+        </ng-container>
+    </div>
+    <div class="button-container">
+        <button class="button-content {{ bottonDisabled ? 'botton-disabled' : ''}}" [disabled]="bottonDisabled" name="enviar" type="submit">Enviar</button>
+    </div>
+</form>

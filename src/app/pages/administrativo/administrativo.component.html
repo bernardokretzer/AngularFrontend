@@ -1,0 +1,18 @@
+<div class="title">
+    <h3>Consulta de compras</h3>
+    <button *ngIf="!isFiltro" class="button-content button-title" name="ir-filtro" type="button" (click)="buttonClick()">Filtro</button>
+
+</div>
+<div class="page-content">
+    <ng-container *ngIf="canUse">
+        <filtro-form *ngIf="isFiltro && canUse" (onFormSubmit)="onFiltroSubmit($event)"></filtro-form>
+        <cards-component *ngIf="cardsValue?.length && !isFiltro && canUse" [cardsValue]="cardsValue"></cards-component>
+        <span class="tela-aviso" *ngIf="!cardsValue?.length && !isFiltro && canUse">Não há solicitações!</span>
+    </ng-container>
+    <ng-container *ngIf="!canUse">
+        <span class="tela-aviso" *ngIf="!canUse">Essa tela somente é permitida para usuários do tipo {{ usuario }}</span>
+        <br />
+        <br />
+        <a *ngIf="!canUse" routerLink="/user">Mudar usuário</a>
+    </ng-container>
+</div>
